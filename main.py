@@ -48,7 +48,8 @@ def Automation():
             voice_assistant.speak("Sorry currently unavailable")
 
 
-
+if __name__ == "__main__":
+    Automation()
 
 
 
