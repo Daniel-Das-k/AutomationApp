@@ -1,0 +1,13 @@
+/automate/
+/outputs/
+.env
+__pycache__
+.DS_Store
+crewAI/email/token.json
+/crewAI/discord/creds.py
+/crewAI/discord/discord_access.json
+/crewAI/email/credentials.json
+/crewAI/email/token.json
+crewAI/youtube/client_secrets.json
+crewAI/youtube/yt_upload.py-oauth2.json
+voice.mp3
