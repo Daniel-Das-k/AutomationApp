@@ -1,46 +1,75 @@
-**# The Indian Cricket Team**
+**SUMMARY**
 
-- Captain: Virat Kohli
-- Vice-Captain: Rohit Sharma
-- Vice-Captain: KL Rahul
+Host: Not specified
+Topic: Instagram Basic Display API Tutorial
 
-**# Players in the Indian Cricket Team**
+**IDEAS**
 
-- Shikhar Dhawan
-- Rishabh Pant
-- Sanju Samson
-- Hardik Pandya
-- Shivam Dube
-- Axar Patel
-- Sundar Singh
-- Shreyas Iyer
-- Kuldeep Yadav
-- Yuzvendra Chahal
-- Bhuvneshwar Kumar
-- Jasprit Bumrah
-- Mohammad Shami
-- Umesh Yadav
+- Instagram Basic Display API allows access to user data.
+- Requires specific user permissions (e.g., profile, media).
+- Authorization process involves obtaining authorization code.
+- Authorization code is exchanged for access token.
+- Access token used to make API calls.
+- API calls return user information (e.g., ID, username).
+- Instagram Graph API used for non-data-reading purposes.
+- App must be in consumer type, not business type.
+- Facebook Client App must be created to integrate API.
+- Instagram app must be created within Facebook app.
+- Instagram tester role assigned to user for testing.
+- Instagram app status can be changed from development to live.
+- Authorization API call obtains authorization code.
+- Access token endpoint used to exchange code for access token.
+- Response includes access token and user ID.
+- API call endpoint accepts access token as parameter.
+- API call returns user ID and username as response.
 
-**# Social Media Followers**
+**INSIGHTS**
 
-- Virat Kohli: 14.9 million on Instagram
-- Rohit Sharma: 4.6 million on Instagram
+- Instagram Basic Display API grants read-only access to user data.
+- OAuth 2.0 protocol used for authentication.
+- Authorization and access token process ensures secure API access.
+- Tester role allows testing of API functionality.
+- Live mode requires app review and approval.
+- API calls return essential user information.
+- Facebook developers website provides comprehensive API documentation.
 
-**# Key Points**
+**QUOTES**
 
-- The Indian cricket team is one of the most successful cricket teams in the world.
-- Virat Kohli is the current captain of the Indian cricket team.
-- The team is hoping to win the World Cup in 2023.
+- "Primary purpose of Instagram Basic Display API is to provide users data."
+- "Instagram basic display API basically provide read access of the data."
+- "Any of the Instagram display API will need or will use that access local as an authentication."
+- "You can either select consumer or any of the type."
+- "In order to implement Instagram basic display API we have to create an Instagram app."
+- "Instagram 9 is in Dev mode we will not be able to test this particular thing on any of the actual Instagram account any public account."
+- "Once we accepted the invitation of Instagram tester from our Instagram account this pending symbol no longer exists."
+- "We queried that particular endpoint and we got the response a successful response is actually returning the ID user ID and the username of the user."
 
-**# Summary**
+**HABITS**
 
-The Indian cricket team is a strong team with a lot of potential. The team is led by Virat Kohli, who is one of the best batsmen in the world. The team is hoping to win the World Cup in 2023.
+- Using browsers for direct API calls.
+- Utilizing curl requests from terminal for API calls.
 
-**# Timestamps**
+**FACTS**
 
-- 00:00:00 - Introduction
-- 00:01:00 - The Indian Cricket Team
-- 00:02:00 - Players in the Indian Cricket Team
-- 00:03:00 - Social Media Followers
-- 00:04:00 - Key Points
-- 00:05:00 - Summary
+- Authorization code and access token have a validity of 1 hour.
+- Long-lived access tokens have a validity of 60 days.
+- Redirect URI provides the endpoint for authorization.
+- De-authorized URI specifies the endpoint for denying authorization.
+- Data deletion URL allows users to request data removal.
+
+**REFERENCES**
+
+- Facebook developers website
+- Instagram Basic Display API documentation
+
+**ONE-SENTENCE TAKEAWAY**
+
+Follow the steps in this tutorial to successfully use Instagram Basic Display API to access user data.
+
+**RECOMMENDATIONS**
+
+- Explore the Facebook developers website for detailed API information.
+- Follow the authorization process carefully to obtain the required tokens.
+- Test the API functionality using the Instagram tester role.
+- Use the appropriate endpoints for different API calls.
+- Keep track of token validity and refresh as necessary.
