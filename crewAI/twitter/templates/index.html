@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twitter Authentication Demo</title>
+</head>
+<body>
+    {% if user_info %}
+        <p>Logged IN as {{user_info["data"]["username"]}}</p>
+        <p>ID: {{user_info["data"]["id"]}}</p><br/>
+        <a href="/logout"><button>Logout</button></a>
+    {% else %}
+        <a href="{{ authorization_url }}"><button>Connect with Twitter</button></a>
+    {% endif %}
+</body>
+</html>

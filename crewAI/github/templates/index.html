@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% if user_info %}
+        <p>Logged IN as {{user_info["login"]}}</p>
+        <p>ID: {{user_info["id"]}}</p><br/>
+        <a href="/logout"><button>Logout</button></a>
+    {% else %}
+        <a href="{{github_uri}}"><button>Connect with github</button></a>
+    {% endif %}
+</body>
+</html>
