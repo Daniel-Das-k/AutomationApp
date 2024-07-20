@@ -6,11 +6,11 @@ app = Flask(__name__)
 app.secret_key = os.environ.get("FLASK_SECRET_KEY", "supersekrit")
 app.config["FACEBOOK_OAUTH_CLIENT_ID"] = os.environ.get("FACEBOOK_OAUTH_CLIENT_ID")
 app.config["FACEBOOK_OAUTH_CLIENT_SECRET"] = os.environ.get("FACEBOOK_OAUTH_CLIENT_SECRET")
-app.config["FACEBOOK_OAUTH_REDIRECT_URI"] = "https://4f22-2405-201-e02d-4936-e4-d932-aad4-91d2.ngrok-free.app/oauth/callback"
+app.config["FACEBOOK_OAUTH_REDIRECT_URI"] = "https://facebook-rakb.onrender.com/oauth/callback"
 facebook_bp = make_facebook_blueprint(
     client_id=app.config["FACEBOOK_OAUTH_CLIENT_ID"],
     client_secret=app.config["FACEBOOK_OAUTH_CLIENT_SECRET"],
-    redirect_to="https://4f22-2405-201-e02d-4936-e4-d932-aad4-91d2.ngrok-free.app/oauth/callback"
+    redirect_to="facebook.login"
 )
 app.register_blueprint(facebook_bp, url_prefix="/login")
 
