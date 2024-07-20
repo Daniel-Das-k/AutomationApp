@@ -1,6 +1,7 @@
 import os
 from crewai import Agent
 from dotenv import load_dotenv
+from langchain_groq import ChatGroq
 from langchain_google_genai import ChatGoogleGenerativeAI
 from tools.search_tools import search_tool
 import torch
@@ -12,13 +13,18 @@ else:
     print("MPS device not found.")
 
 load_dotenv()
+# google_api_key=os.getenv("GOOGLE_API_KEY")
+# print(google_api_key)
+# llm = ChatGoogleGenerativeAI(
+#     model="gemini-1.5-flash",
+#     verbose=True,
+#     temperature=0.5,
+#     google_api_key=os.getenv("GOOGLE_API_KEY")
+#)
 
-llm = ChatGoogleGenerativeAI(
-    model="gemini-1.5-flash",
-    verbose=True,
-    temperature=0.5,
-    google_api_key=os.getenv("GOOGLE_API_KEY")
-)
+groq_api_key = os.environ["GROQ_API_KEY"]
+llm = ChatGroq(groq_api_key=groq_api_key,
+               model_name="llama3-70b-8192")
 
 discord_drafting_agent = Agent(
     role='Discord Message Specialist',

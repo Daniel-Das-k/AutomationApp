@@ -27,3 +27,6 @@ class VoiceAssistant:
 
         return said.lower()
 
+if __name__ == "__main__":
+    voice_assistant = VoiceAssistant()
+    voice_assistant.get_audio()

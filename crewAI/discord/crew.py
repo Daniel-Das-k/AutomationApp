@@ -34,7 +34,7 @@ class Discord:
                 format_content_task_discord
             ],
             process=Process.sequential,
-            memory=True,
+            memory=False,
             cache=True,
             max_rpm=100,
             share_crew=True

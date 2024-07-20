@@ -1,7 +1,7 @@
 import os
 from crewai import Agent
-from .tools.search_tools import search_tool
-from .tools.trends_tools import TrendsTools
+from tools.search_tools import search_tool
+from tools.trends_tools import TrendsTools
 from langchain_groq import ChatGroq
 from langchain_google_genai import ChatGoogleGenerativeAI
 from dotenv import load_dotenv

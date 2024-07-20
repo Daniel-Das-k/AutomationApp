@@ -2,12 +2,11 @@ import os
 import json
 from dotenv import load_dotenv
 load_dotenv()
-import tweepy
 import re
 from crewai import  Crew
 from crewai.process import Process
-from .tasks import topic_analysis,content_research,create_twitter_posts
-from .agents import trending_topic_researcher_agent,content_researcher_agent,creative_content_creator_agent
+from tasks import topic_analysis,content_research,create_twitter_posts
+from agents import trending_topic_researcher_agent,content_researcher_agent,creative_content_creator_agent
 
 class Twitter:
 	def __init__(self):
@@ -16,7 +15,7 @@ class Twitter:
 			agents=[trending_topic_researcher_agent,content_researcher_agent,creative_content_creator_agent],
 			tasks=[topic_analysis,content_research,create_twitter_posts],
 			process=Process.sequential,
-			memory=True,
+			memory=False,
             cache=True,
             max_rpm=100,
             share_crew=True
@@ -31,3 +30,6 @@ class Twitter:
 		return result
    
 
+if __name__ == "__main__":
+    crew_runner = Twitter()
+    crew_runner.run()

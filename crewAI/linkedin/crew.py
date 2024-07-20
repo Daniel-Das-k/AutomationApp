@@ -12,7 +12,7 @@ class LinkedIn:
             agents=self.agents,
             tasks=self.tasks,
             process=Process.sequential,
-            memory=True,
+            memory=False,
             cache=True,
             max_rpm=100,
             share_crew=True

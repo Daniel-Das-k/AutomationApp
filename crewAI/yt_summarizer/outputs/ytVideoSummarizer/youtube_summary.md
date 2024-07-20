@@ -1,75 +1,82 @@
-**SUMMARY**
+### SUMMARY:
+* This hymn celebrates and worships a deity, expressing gratitude and praise for creation and God's greatness.
 
-Host: Not specified
-Topic: Instagram Basic Display API Tutorial
+### IDEAS:
+- All creation worships God in spirit and truth.
+- God alone is truly great and reigns eternally.
+- God's praise fills the heavens and the earth.
+- We live for the glory of God's name.
+- Jesus can teach us how to live with purpose.
+- God's fire can burn within us, guiding our path.
+- Singing praises amplifies our appreciation and worship of God.
+- The whole earth acknowledges God's holiness and sings His praises.
+- God's greatness deserves praise from all creation.
+- We are living for the glory of God's name.
+- God's praise fills all realms, from earth to heaven.
+- Celebrating God's greatness unites us in worship.
+- We can live in accordance with God's will through Christ's guidance.
+- Our worship should reflect the awe and reverence for God's majesty.
+- The whole earth resonates with the holiness of God.
+- Praising God together strengthens our collective devotion.
+- Worshipping God brings fulfillment and aligns our purpose with the divine.
+- God's creation showcases the beauty and wonder of His existence.
+- Our worship should be sincere and heartfelt, acknowledging God's sovereignty.
 
-**IDEAS**
+### INSIGHTS:
+- True worship involves both external expressions and inward devotion.
+- Recognizing God's greatness humbles us and inspires gratitude.
+- Praising God publicly amplifies His glory and encourages others.
+- God's holiness is not distant but is evident throughout creation.
+- Living for God's glory brings purpose and fulfillment to our lives.
+- God's presence ignites within us a passion that guides our actions.
+- Worship creates a sacred space that connects us with God and each other.
+- The universe is a symphony of praise glorifying God's greatness.
+- Our purpose is intertwined with God's purpose for our lives.
+- Worship should not be limited to specific times or places but permeate our daily lives.
 
-- Instagram Basic Display API allows access to user data.
-- Requires specific user permissions (e.g., profile, media).
-- Authorization process involves obtaining authorization code.
-- Authorization code is exchanged for access token.
-- Access token used to make API calls.
-- API calls return user information (e.g., ID, username).
-- Instagram Graph API used for non-data-reading purposes.
-- App must be in consumer type, not business type.
-- Facebook Client App must be created to integrate API.
-- Instagram app must be created within Facebook app.
-- Instagram tester role assigned to user for testing.
-- Instagram app status can be changed from development to live.
-- Authorization API call obtains authorization code.
-- Access token endpoint used to exchange code for access token.
-- Response includes access token and user ID.
-- API call endpoint accepts access token as parameter.
-- API call returns user ID and username as response.
+### QUOTES:
+- "All creation gives You praise"
+- "You alone are truly great"
+- "God is great and His praise fills the earth"
+- "Let Your fire burn in us"
+- "Holy is the Lord, the whole earth sings"
+- "We're living for the glory of Your name"
+- "God is great sing His praise"
+- "All creation cries to You"
+- "For eternity God reigns"
+- "Your name will be praised through all the world"
 
-**INSIGHTS**
+### HABITS:
+- Singing and praising God as a form of worship.
+- Reflecting on God's greatness through prayer and meditation.
+- Seeking guidance from Jesus Christ to live according to God's will.
+- Participating in communal worship services to express faith and connect with others.
+- Regularly studying religious texts to deepen understanding of God's principles.
+- Incorporating gratitude and praise into daily experiences.
+- Praying for discernment and clarity in daily decisions.
+- Attending religious or spiritual retreats for rejuvenation and renewal.
+-Practicing regular acts of kindness and compassion towards others.
 
-- Instagram Basic Display API grants read-only access to user data.
-- OAuth 2.0 protocol used for authentication.
-- Authorization and access token process ensures secure API access.
-- Tester role allows testing of API functionality.
-- Live mode requires app review and approval.
-- API calls return essential user information.
-- Facebook developers website provides comprehensive API documentation.
+### FACTS:
+- The vastness and complexity of the universe testifies to God's greatness.
+- Music has been a fundamental part of worship in various cultures throughout history.
+- The human brain has a dedicated region for religious experiences.
+- Acts of compassion and kindness can positively impact both the giver and the recipient.
+- Worshiping God has been shown to have numerous psychological and social benefits.
+- The Golden Rule, found in many religions, promotes ethical behavior towards others.
+- Religious rituals and practices often foster a sense of community and belonging.
+- Gratitude has been linked to increased happiness, decreased stress, and improved relationships.
+- Praising God can help us overcome challenges and find hope in difficult times.
 
-**QUOTES**
+### REFERENCES:
+- "All Creation Cries to You" hymn by Elevation Worship
 
-- "Primary purpose of Instagram Basic Display API is to provide users data."
-- "Instagram basic display API basically provide read access of the data."
-- "Any of the Instagram display API will need or will use that access local as an authentication."
-- "You can either select consumer or any of the type."
-- "In order to implement Instagram basic display API we have to create an Instagram app."
-- "Instagram 9 is in Dev mode we will not be able to test this particular thing on any of the actual Instagram account any public account."
-- "Once we accepted the invitation of Instagram tester from our Instagram account this pending symbol no longer exists."
-- "We queried that particular endpoint and we got the response a successful response is actually returning the ID user ID and the username of the user."
+### ONE-SENTENCE TAKEAWAY:
+Living for God's glory brings purpose and aligns us with the divine symphony of praise.
 
-**HABITS**
-
-- Using browsers for direct API calls.
-- Utilizing curl requests from terminal for API calls.
-
-**FACTS**
-
-- Authorization code and access token have a validity of 1 hour.
-- Long-lived access tokens have a validity of 60 days.
-- Redirect URI provides the endpoint for authorization.
-- De-authorized URI specifies the endpoint for denying authorization.
-- Data deletion URL allows users to request data removal.
-
-**REFERENCES**
-
-- Facebook developers website
-- Instagram Basic Display API documentation
-
-**ONE-SENTENCE TAKEAWAY**
-
-Follow the steps in this tutorial to successfully use Instagram Basic Display API to access user data.
-
-**RECOMMENDATIONS**
-
-- Explore the Facebook developers website for detailed API information.
-- Follow the authorization process carefully to obtain the required tokens.
-- Test the API functionality using the Instagram tester role.
-- Use the appropriate endpoints for different API calls.
-- Keep track of token validity and refresh as necessary.
+### RECOMMENDATIONS:
+- Make time for daily worship to connect with God and express gratitude.
+- Seek opportunities to share your faith and inspire others to worship God.
+- Use your talents and abilities to glorify God and make a positive impact.
+- Surround yourself with others who share your values and encourage you in your faith journey.
+- Always strive to live in accordance with God's principles and embody His love and compassion.

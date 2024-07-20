@@ -1,5 +1,5 @@
 from crewai import Task
-from .agents import trending_topic_researcher_agent,content_researcher_agent,creative_content_creator_agent
+from agents import trending_topic_researcher_agent,content_researcher_agent,creative_content_creator_agent
 
 topic_analysis =  Task(
 		description=("""

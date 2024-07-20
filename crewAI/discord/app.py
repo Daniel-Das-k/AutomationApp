@@ -3,7 +3,7 @@ import json
 from flask import Flask, render_template, request, session, redirect
 from zenora import APIClient
 from flask_cors import CORS
-from crewAI.discord.creds import TOKEN, CLIENT_SECRET, REDIRECT_URI, OAUTH_URL
+from creds import TOKEN, CLIENT_SECRET, REDIRECT_URI, OAUTH_URL
 
 class discordOauth:
     def __init__(self):
