@@ -68,6 +68,7 @@
 #     port = int(os.environ.get("PORT", 5001))
 #     app.run(host='0.0.0.0', port=port)
 
+
 from flask import Flask, redirect, request, session, url_for
 import requests
 import os
@@ -81,7 +82,11 @@ Fb_REDIRECT_URI = "https://facebook-rakb.onrender.com/facebook/callback"
 
 @app.route('/')
 def home():
-    return "Home Page"
+    access_token = session.get("access_token")
+    if access_token:
+        return f"Access Token: {access_token}"
+    else:
+        return "Home Page"
 
 @app.route('/facebook/login')
 def facebook_login():
@@ -109,7 +114,7 @@ def facebook_callback():
                 f"https://graph.facebook.com/v12.0/me?fields=id,name,email&access_token={access_token}"
             )
             print("User response", user_response.json())
-            return redirect('/')
+            return redirect(url_for('home'))
     else:
         return "Error: No code provided or invalid code"
 
