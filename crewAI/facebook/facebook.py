@@ -81,6 +81,7 @@ Fb_REDIRECT_URI = "https://facebook-rakb.onrender.com/facebook/callback"
 
 @app.route('/')
 def home():
+    print("HI")
     access_token = session.get("access_token")
     if access_token:
         return f"Access Token: {access_token}"
