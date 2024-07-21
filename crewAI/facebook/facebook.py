@@ -109,9 +109,11 @@ def facebook_callback():
 
             try:
                 # Save the access token to a JSON file
-                with open('access_token.json', 'w') as token_file:
+                file_path = os.path.abspath('access_token.json')
+                print(f"Attempting to save access token to {file_path}")
+                with open(file_path, 'w') as token_file:
                     json.dump({"access_token": access_token}, token_file)
-                print("Access token saved to access_token.json")
+                print(f"Access token saved to {file_path}")
             except Exception as e:
                 print("Error writing to access_token.json:", e)
 
