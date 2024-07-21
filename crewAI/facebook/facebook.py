@@ -95,7 +95,7 @@ def facebook_login():
 @app.route('/facebook/callback')
 def facebook_callback():
     print("Facebook callback route accessed")
-    code = request.args.get("code")
+    code = request.args["code"]
     if code:
         response = requests.get(
             f"https://graph.facebook.com/v12.0/oauth/access_token?client_id={Fb_APP_ID}&redirect_uri={Fb_REDIRECT_URI}&client_secret={Fb_APP_SECRET}&code={code}"
@@ -108,12 +108,9 @@ def facebook_callback():
             print("Access token obtained:", access_token)
 
             try:
-                # Save the access token to a JSON file
-                file_path = os.path.abspath('access_token.json')
-                print(f"Attempting to save access token to {file_path}")
-                with open(file_path, 'w') as token_file:
+                with open('access_token.json', 'w') as token_file:
                     json.dump({"access_token": access_token}, token_file)
-                print(f"Access token saved to {file_path}")
+                print("Access token saved to access_token.json")
             except Exception as e:
                 print("Error writing to access_token.json:", e)
 
