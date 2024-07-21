@@ -68,7 +68,6 @@
 #     port = int(os.environ.get("PORT", 5001))
 #     app.run(host='0.0.0.0', port=port)
 
-
 from flask import Flask, redirect, request, session, url_for
 import requests
 import os
@@ -102,18 +101,24 @@ def facebook_callback():
             f"https://graph.facebook.com/v12.0/oauth/access_token?client_id={Fb_APP_ID}&redirect_uri={Fb_REDIRECT_URI}&client_secret={Fb_APP_SECRET}&code={code}"
         )
         data = response.json()
+        print("Response from Facebook:", data)
         if "access_token" in data:
             access_token = data["access_token"]
             session["access_token"] = access_token
+            print("Access token obtained:", access_token)
 
-            # Save the access token to a JSON file
-            with open('access_token.json', 'w') as token_file:
-                json.dump({"access_token": access_token}, token_file)
+            try:
+                # Save the access token to a JSON file
+                with open('access_token.json', 'w') as token_file:
+                    json.dump({"access_token": access_token}, token_file)
+                print("Access token saved to access_token.json")
+            except Exception as e:
+                print("Error writing to access_token.json:", e)
 
             user_response = requests.get(
                 f"https://graph.facebook.com/v12.0/me?fields=id,name,email&access_token={access_token}"
             )
-            print("User response", user_response.json())
+            print("User response:", user_response.json())
             return redirect(url_for('home'))
     else:
         return "Error: No code provided or invalid code"
