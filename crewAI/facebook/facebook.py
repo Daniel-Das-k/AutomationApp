@@ -15,12 +15,14 @@ class FacebookOAuthApp:
         self.setup_routes()
 
     def setup_routes(self):
+        self.oauth_url = "https://www.facebook.com/v12.0/dialog/oauth?client_id={self.Fb_APP_ID}&redirect_uri={self.Fb_REDIRECT_URI}&scope=read_insights"
         self.app.add_url_rule('/', 'home', self.home)
         # self.app.add_url_rule('/facebook/login', 'facebook_login', self.facebook_login)
         self.app.add_url_rule('/facebook/callback', 'facebook_callback', self.facebook_callback)
         self.app.add_url_rule('/logout', 'logout', self.logout)
 
     def home(self):
+        print(self.oauth_url)
         stored_data = self.get_stored_data()
         if stored_data:
             access_token = stored_data['access_token']
@@ -29,7 +31,7 @@ class FacebookOAuthApp:
             user_data = self.get_user_data(access_token)
             return render_template("index.html", user_data=user_data)
         else:
-            return render_template("index.html", oauth_uri=self.get_oauth_url())
+            return render_template("index.html", oauth_uri=self.oauth_url)
 
 
     def facebook_callback(self):
@@ -58,8 +60,6 @@ class FacebookOAuthApp:
             os.remove(self.TOKEN_FILE)
         return redirect("/")
 
-    def get_oauth_url(self):
-        return f"https://www.facebook.com/v12.0/dialog/oauth?client_id={self.Fb_APP_ID}&redirect_uri={self.Fb_REDIRECT_URI}&scope=email"
 
     def get_stored_data(self):
         if os.path.exists(self.TOKEN_FILE):
