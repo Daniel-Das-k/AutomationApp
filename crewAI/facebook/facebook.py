@@ -16,7 +16,7 @@ class FacebookOAuthApp:
 
     def setup_routes(self):
         self.app.add_url_rule('/', 'home', self.home)
-        self.app.add_url_rule('/facebook/login', 'facebook_login', self.facebook_login)
+        # self.app.add_url_rule('/facebook/login', 'facebook_login', self.facebook_login)
         self.app.add_url_rule('/facebook/callback', 'facebook_callback', self.facebook_callback)
         self.app.add_url_rule('/logout', 'logout', self.logout)
 
@@ -31,9 +31,6 @@ class FacebookOAuthApp:
         else:
             return render_template("index.html", oauth_uri=self.get_oauth_url())
 
-    def facebook_login(self):
-        print("Facebook login route accessed")
-        return redirect(self.get_oauth_url())
 
     def facebook_callback(self):
         print("Facebook callback route accessed")
