@@ -11,9 +11,8 @@ Fb_APP_SECRET = "e04ebcfe52882ed9a9134937547e0ba0"
 Fb_REDIRECT_URI = "https://facebook-rakb.onrender.com/facebook/callback"
 
 @app.route('/')
-def home():
-    
-    access_token = session.get("user_data")
+def home():  
+    access_token = session.get("access_token")
     print(access_token)
     if access_token:
         return f"Access Token: {access_token}"
