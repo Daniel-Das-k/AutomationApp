@@ -14,7 +14,7 @@ db = SQLAlchemy(app)
 bcrypt = Bcrypt(app)
 Session(app)
 
-# User Class
+
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     fname = db.Column(db.String(255), nullable=False)
@@ -41,8 +41,7 @@ class Admin(db.Model):
 with app.app_context():
     db.create_all()
 
-    # insert admin data one time only one time insert this data
-    # latter will check the condition
+
     admin = Admin(username='Daniel', password=bcrypt.generate_password_hash('Daniel123', 10))
     db.session.add(admin)
     db.session.commit()
@@ -84,7 +83,7 @@ def adminDashboard():
     NotTotalApprove = User.query.filter_by(status=0).count()
     return render_template('admin/dashboard.html', title="Admin Dashboard", totalUser=totalUser, totalApprove=totalApprove, NotTotalApprove=NotTotalApprove)
 
-# admin get all user 
+# admin get alll user 
 @app.route('/admin/get-all-user', methods=["POST", "GET"])
 def adminGetAllUser():
     if not session.get('admin_id'):
@@ -106,7 +105,7 @@ def adminApprove(id):
     flash('Approve Successfully', 'success')
     return redirect('/admin/get-all-user')
 
-# change admin password
+# change admin passsword
 @app.route('/admin/change-admin-password', methods=["POST", "GET"])
 def adminChangePassword():
     admin = Admin.query.get(1)
@@ -134,7 +133,7 @@ def adminLogout():
         session['admin_name'] = None
         return redirect('/')
 
-# -------------------------user area----------------------------
+# User Area is below above was the admin area fazil
 
 # User login
 @app.route('/user/', methods=["POST", "GET"])
