@@ -76,7 +76,7 @@ app.secret_key = "secret"
 Fb_APP_ID = "1519269175630468"
 Fb_APP_SECRET = "e04ebcfe52882ed9a9134937547e0ba0"
 Fb_REDIRECT_URI = "https://facebook-rakb.onrender.com/facebook/callback"
-PAGE_ID = "122098750820430887"  # Your Page ID
+PAGE_ID = "389529784241782"  # Your Page ID
 
 @app.route('/')
 def home():
