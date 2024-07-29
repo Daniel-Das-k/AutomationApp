@@ -225,21 +225,25 @@ def facebook_callback():
 
 @app.route('/facebook/post', methods=['POST'])
 def facebook_post():
-    page_access_token = session.get("page_access_token")
+    page_access_token = session.get("access_token")
     if not page_access_token:
         return redirect(url_for('facebook_login'))
     
     message = request.form.get('message')
     if not message:
+        print("error")
         return "Error: No message provided"
+    
     
     post_url = f"https://graph.facebook.com/v20.0/{PAGE_ID}/feed"
     post_data = {
         'message': message,
         'access_token': page_access_token
     }
+    print(post_data)
     
     response = requests.post(post_url, data=post_data)
+    print(response)
     result = response.json()
     print("Post response:", result)
     
