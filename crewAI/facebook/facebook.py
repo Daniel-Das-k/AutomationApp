@@ -164,7 +164,7 @@ PAGE_ID = "122098750820430887"  # Your Page ID
 
 @app.route('/')
 def home():  
-    page_access_token = session.get("page_access_token")
+    page_access_token = session.get("access_token")
     if page_access_token:
         return '''
             Access Token: {page_access_token}
