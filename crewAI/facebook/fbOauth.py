@@ -17,10 +17,6 @@ def home():
         return f'''
             User Access Token: {access_token}
             Page Access Token: {page_access_token}
-            <form action="/facebook/post" method="post">
-                <input type="text" name="message" placeholder="Enter message to post">
-                <button type="submit">Post to Facebook</button>
-            </form>
         '''
     else:
         return redirect(url_for('facebook_login'))
@@ -62,79 +58,37 @@ def facebook_callback():
     else:
         return "Error: No code provided or invalid code"
 
-@app.route('/facebook/post', methods=['POST'])
-def facebook_post():
-    page_access_token = session.get("page_access_token")
-    print("Page Access Token: ",page_access_token)
-    page_id = session.get("page_id")
-    print("Page ID :",page_id)
+# @app.route('/facebook/post', methods=['POST'])
+# def facebook_post():
+#     page_access_token = session.get("page_access_token")
+#     print("Page Access Token: ",page_access_token)
+#     page_id = session.get("page_id")
+#     print("Page ID :",page_id)
     
-    if not page_access_token or not page_id:
-        return redirect(url_for('facebook_login'))
+#     if not page_access_token or not page_id:
+#         return redirect(url_for('facebook_login'))
     
-    message = request.form.get('message')
-    if not message:
-        return "Error: No message provided"
+#     message = request.form.get('message')
+#     if not message:
+#         return "Error: No message provided"
     
-    post_url = f"https://graph.facebook.com/v20.0/{page_id}/feed"
-    post_data = {
-        'message': message,
-        'access_token': page_access_token
-    }
+#     post_url = f"https://graph.facebook.com/v20.0/{page_id}/feed"
+#     post_data = {
+#         'message': message,
+#         'access_token': page_access_token
+#     }
     
-    response = requests.post(post_url, data=post_data)
-    result = response.json()
+#     response = requests.post(post_url, data=post_data)
+#     result = response.json()
     
-    if 'id' in result:
-        return f"Post ID: {result['id']}"
-    else:
-        error_message = result.get('error', {}).get('message', 'Unknown error')
-        return f"Error: {error_message}"
+#     if 'id' in result:
+#         return f"Post ID: {result['id']}"
+#     else:
+#         error_message = result.get('error', {}).get('message', 'Unknown error')
+#         return f"Error: {error_message}"
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5002))
     app.run(host='0.0.0.0', port=port)
 
 
-
-# import facebook
-# import json
-# from datetime import datetime, timedelta
-# import time
-
-# class FacebookManager:
-#     def __init__(self):
-#         self.credentials = self._load_credentials()
-#         self.facebook_api = self._initialize_facebook_api()
-
-#     def _load_credentials(self):
-#         with open('facebook_token.json', 'r') as file:
-#             return json.load(file)
-        
-
-#     def _initialize_facebook_api(self):
-#         access_token = self.credentials['page_access_token']
-#         print(access_token)
-#         return facebook.GraphAPI(access_token)
-
-#     def schedule_post(self, content: str, datetime_str: str):
-#         post_time = datetime.strptime(datetime_str, '%Y-%m-%d %H:%M')
-#         current_time = datetime.now()
-
-#         delay = (post_time - current_time).total_seconds()
-#         if delay > 0:
-#             time.sleep(delay)
-
-#         self._post_to_facebook(content)
-
-#     def _post_to_facebook(self, content: str):
-#         try:
-#             print("Posting facebook....")
-#             post = self.facebook_api.put_object(parent_object='me', connection_name='feed', message=content)
-#             print(post)
-#         except facebook.GraphAPIError as e:
-#             print(f"An error occurred: {e}")
-
-# if __name__ == "__main__":
-#     facebook_manager = FacebookManager()
-#     facebook_manager._post_to_facebook('Excited to announce our new project!')

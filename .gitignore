@@ -13,3 +13,5 @@ crewAI/youtube/client_secrets.json
 crewAI/youtube/yt_upload.py-oauth2.json
 voice.mp3
 .DS_Store
+/crewAI/gmail/credentials.json
+/crewAI/gmail/token.json
