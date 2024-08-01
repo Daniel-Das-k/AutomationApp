@@ -3,7 +3,7 @@ certifi==2024.7.4
 charset-normalizer==3.3.2
 click==8.1.7
 Flask==3.0.3
-python-dotenv==1.0.1=
+python-dotenv==1.0.1
 Flask-Dance==7.1.0
 Flask-Cors==4.0.1
 idna==3.7
