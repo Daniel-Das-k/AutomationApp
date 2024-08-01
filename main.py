@@ -1,14 +1,14 @@
 from crewAI.email.src.graph import WorkFlow
-from crewAI.facebook.crew import Facebook
+# from crewAI.facebook.crew import Facebook
 from crewAI.instagram.crew import Instagram
 from crewAI.linkedin.crew import LinkedIn
-from crewAI.twitter.twitter import TwitterAutoPoster
+from crewAI.twitter.xOauth import TwitterAutoPoster
 from crewAI.summarization.summarize import Summarizer
 from crewAI.yt_summarizer.ytTransSummarizer import YouTubeTranscriptSummarizer
 from voice import VoiceAssistant
 
 voice_assistant = VoiceAssistant()
-facebook = Facebook(voice_assistant)
+# facebook = Facebook(voice_assistant)
 instagram = Instagram(voice_assistant)
 linkedin = LinkedIn(voice_assistant)
 summarizer = Summarizer(voice_assistant)
@@ -29,8 +29,8 @@ def Automation():
         elif "instagram" in query.lower():
             instagram.run()
 
-        elif "facebook" in query.lower():
-            facebook.run()
+        # elif "facebook" in query.lower():
+        #     facebook.run()
         
         elif "twitter" in query.lower():
             twitter.run()

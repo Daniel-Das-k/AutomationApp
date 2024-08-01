@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -14,4 +14,22 @@
         <a href="{{ authorization_url }}"><button>Connect with Twitter</button></a>
     {% endif %}
 </body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Twitter OAuth</title>
+</head>
+<body>
+    {% if user_info %}
+        <h1>Welcome</h1>
+        <!-- <p>Username: {{ user_info['username'] }}</p>
+        <p>User ID: {{ user_info['id'] }}</p> -->
+    {% else %}
+        <a href="{{ oauth_uri }}">Login with Twitter</a>
+    {% endif %}
+</body>
+</html>
+
 </html>
