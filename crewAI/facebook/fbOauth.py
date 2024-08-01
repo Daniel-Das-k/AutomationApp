@@ -68,6 +68,8 @@ import os
 import json
 from flask import Flask, redirect, request, session, url_for, render_template
 import requests
+from dotenv import load_dotenv
+load_dotenv()
 
 class FacebookOauth:
     def __init__(self):
