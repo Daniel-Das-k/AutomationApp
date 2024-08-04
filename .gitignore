@@ -15,5 +15,5 @@ voice.mp3
 .DS_Store
 /crewAI/gmail/credentials.json
 /crewAI/gmail/token.json
-youtube_creds.json
+/youtube_creds.json
 main.py-oauth2.json
