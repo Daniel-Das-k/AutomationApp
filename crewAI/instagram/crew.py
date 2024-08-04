@@ -1,6 +1,6 @@
 from crewai import Crew ,Process
-from agents import instagram_content_compiler,instagram_content_formatter,instagram_drafting_agent,instagram_image_creator,instagram_refinement_agent,instagram_seo_agent
-from tasks import drafting_task_instagram,editing_task_instagram,seo_task_instagram,chief_task_instagram,image_generate_task_instagram,format_content_task_instagram
+from .agents import instagram_content_compiler,instagram_content_formatter,instagram_drafting_agent,instagram_image_creator,instagram_refinement_agent,instagram_seo_agent
+from .tasks import drafting_task_instagram,editing_task_instagram,seo_task_instagram,chief_task_instagram,image_generate_task_instagram,format_content_task_instagram
 
 class Instagram:
     def __init__(self):
@@ -15,17 +15,17 @@ class Instagram:
             share_crew=True
         )
 
-    def run(self,topic):
+    def run(self,content):
         # self.voice_assistant.speak("Say the Topic: ")
         # text = self.voice_assistant.get_audio()
-        if len(topic) > 1:
-            result = self.crew.kickoff(inputs={'topic': topic})
+        if len(content) > 1:
+            result = self.crew.kickoff(inputs={'topic': content})
             print(result)
 
-if __name__ == "__main__":
-    generator = Instagram()
+# if __name__ == "__main__":
+#     generator = Instagram()
 
-    text = input("Enter the topic for the Facebook post: ")
+#     text = input("Enter the topic for the Facebook post: ")
 
-    result = generator.run(topic=text)
-    print(result)
+#     result = generator.run(topic=text)
+#     print(result)

@@ -1,12 +1,11 @@
 from crewai import Task
-from agents import (
+from .agents import (
     discord_drafting_agent,
     discord_refinement_agent,
     discord_seo_agent,
     discord_content_compiler,
     discord_formatting_agent
 )
-from crewai import Task
 
 drafting_task_discord = Task(
     description=(

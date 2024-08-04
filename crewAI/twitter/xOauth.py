@@ -301,8 +301,8 @@ class TwitterOauth:
             self.current_user_username= stored_data['current_user']['username']
             print(self.current_user_id, "Id loaded from storage")
             print(self.current_user_username,"User Name")
-            # return render_template("index.html", user_info=self.current_user_id)
-            return self.current_user_username
+            return render_template("index.html", user_info=self.current_user_id)
+            
         else:
             twitter = OAuth2Session(self.client_id, redirect_uri=self.redirect_uri, scope=self.scopes)
             authorization_url, state = twitter.authorization_url(

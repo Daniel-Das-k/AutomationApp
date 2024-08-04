@@ -5,7 +5,7 @@ from langchain_groq import ChatGroq
 # from tools.tool import file_read_tool
 # from tools.tool import generateimage
 from langchain_community.llms import Ollama
-from tools.websearch import search_tool
+from .tools.websearch import search_tool
 from langchain_google_genai import ChatGoogleGenerativeAI
 from dotenv import load_dotenv
 import torch

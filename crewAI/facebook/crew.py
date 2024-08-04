@@ -1,5 +1,5 @@
 from crewai import Crew, Process
-from agents import (
+from .agents import (
     facebook_content_compiler,
     facebook_content_formatter,
     facebook_drafting_agent,
@@ -7,7 +7,7 @@ from agents import (
     facebook_refinement_agent,
     facebook_seo_agent
 )
-from tasks import (
+from .tasks import (
     drafting_task_facebook,
     editing_task_facebook,
     seo_task_facebook,
@@ -29,18 +29,18 @@ class Facebook:
             share_crew=True
         )
 
-    def run(self,topic):
+    def run(self,content):
         # self.voice_assistant.speak("Topic: ")
         # text = self.voice_assistant.get_audio()
         # text = input(": ")
-        if len(topic) > 1:
-            result = self.crew.kickoff(inputs={'topic': topic})
+        if len(content) > 1:
+            result = self.crew.kickoff(inputs={'topic': content})
             print(result)
 
-if __name__ == "__main__":
-    generator = Facebook()
+# if __name__ == "__main__":
+#     generator = Facebook()
 
-    text = input("Enter the topic for the Facebook post: ")
+#     text = input("Enter the topic for the Facebook post: ")
 
-    result = generator.run(topic=text)
-    print(result)
+#     result = generator.run(topic=text)
+#     print(result)

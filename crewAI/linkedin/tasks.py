@@ -1,5 +1,5 @@
 
-from agents import drafting_agent, seo_optimization_agent, editing_refinement_agent, content_formater_agent,image_generator_agent,chief_agent
+from .agents import drafting_agent, seo_optimization_agent, editing_refinement_agent, content_formater_agent,image_generator_agent,chief_agent
 from crewai import Task
 
 drafting_task = Task(

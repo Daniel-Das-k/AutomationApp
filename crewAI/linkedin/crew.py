@@ -1,6 +1,6 @@
 from crewai import Crew, Process
-from agents import drafting_agent, seo_optimization_agent, editing_refinement_agent, chief_agent
-from tasks import drafting_task, seo_task, chief_task, editing_task
+from .agents import drafting_agent, seo_optimization_agent, editing_refinement_agent, chief_agent
+from .tasks import drafting_task, seo_task, chief_task, editing_task
 
 class LinkedIn:
     def __init__(self):
@@ -18,15 +18,15 @@ class LinkedIn:
             share_crew=True
         )
 
-    def run(self):
+    def run(self,content):
         # self.voice_assistant.speak("Enter the Topic to be posted on : ")
         # text = self.voice_assistant.get_audio()
-        text = input("Enter: ")
-        if len(text) > 1:
-            result = self.crew.kickoff(inputs={'topic': text})
+        # text = input("Enter: ")
+        if len(content) > 1:
+            result = self.crew.kickoff(inputs={'topic': content})
             print(result)
 
 
-if __name__ == "__main__":
-    crew_runner = LinkedIn()
-    crew_runner.run()
+# if __name__ == "__main__":
+#     crew_runner = LinkedIn()
+#     crew_runner.run()

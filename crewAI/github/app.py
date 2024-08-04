@@ -24,9 +24,12 @@ class GitHubOAuthApp:
 
     def index(self):
         if github.authorized:
+            print(github.authorized)
             account_info = github.get('/user')
             if account_info.ok:
+                print(account_info)
                 account_info_json = account_info.json()
+                print(account_info_json)
                 return render_template("index.html", user_info=account_info_json)
         else:
             return render_template("index.html", github_uri=url_for('github.login'))

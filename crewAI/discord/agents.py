@@ -3,7 +3,7 @@ from crewai import Agent
 from dotenv import load_dotenv
 from langchain_groq import ChatGroq
 from langchain_google_genai import ChatGoogleGenerativeAI
-from tools.search_tools import search_tool
+from .tools.search_tools import search_tool
 import torch
 
 if torch.backends.mps.is_available():

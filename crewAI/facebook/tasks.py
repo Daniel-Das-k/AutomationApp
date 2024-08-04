@@ -1,5 +1,5 @@
 # Import necessary modules and classes
-from agents import (
+from .agents import (
     facebook_drafting_agent,
     facebook_refinement_agent,
     facebook_seo_agent,

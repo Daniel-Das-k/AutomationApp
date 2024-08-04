@@ -1,20 +1,4 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Twitter Authentication Demo</title>
-</head>
-<body>
-    {% if user_info %}
-        <p>Logged IN as {{user_info["data"]["username"]}}</p>
-        <p>ID: {{user_info["data"]["id"]}}</p><br/>
-        <a href="/logout"><button>Logout</button></a>
-    {% else %}
-        <a href="{{ authorization_url }}"><button>Connect with Twitter</button></a>
-    {% endif %}
-</body>
-</html> -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,8 +8,9 @@
 <body>
     {% if user_info %}
         <h1>Welcome</h1>
-        <!-- <p>Username: {{ user_info['username'] }}</p>
-        <p>User ID: {{ user_info['id'] }}</p> -->
+        <p>Username: {{ user_info }}</p>
+        <p>User ID: {{ user_info['id'] }}</p>
+        <a href="/logout"><button>Logout</button></a>
     {% else %}
         <a href="{{ oauth_uri }}">Login with Twitter</a>
     {% endif %}

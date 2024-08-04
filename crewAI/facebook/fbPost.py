@@ -31,8 +31,10 @@ class FacebookManager:
     def _post_to_facebook(self, content: str):
         try:
             print("Posting facebook....")
-            post = self.facebook_api.put_object(parent_object='me', connection_name='feed', message=content)
-            print(post)
+            # post = self.facebook_api.put_object(parent_object='me', connection_name='feed', message=content)
+            image = self.facebook_api.put_photo(image=open('img.png', 'rb'),
+                message='Look at this cool photo!')
+            print(image)
         except facebook.GraphAPIError as e:
             print(f"An error occurred: {e}")
 

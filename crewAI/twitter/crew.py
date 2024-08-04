@@ -21,13 +21,14 @@ class Twitter:
             share_crew=True
 		)
 
-	def run(self):
+	def run(self,content):
 		# self.voice_assistant.speak("Say the topic to tweet about: ")
 		# text = self.voice_assistant.get_audio()
-		text = input("Enter the topic to tweet about: : ")
-		result = self.crew.kickoff(inputs={'topic': text})
-		print(result)
-		return result
+		# text = input("Enter the topic to tweet about: : ")
+		if len(content) > 1:
+			result = self.crew.kickoff(inputs={'topic': content})
+			print(result)
+			return result
    
 
 # if __name__ == "__main__":

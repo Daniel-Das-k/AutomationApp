@@ -170,5 +170,5 @@ has been developed
         content = summarizer.generate_gemini_content(text)
         summarizer.save_to_markdown("summary.md", content)
 
-if __name__ == "__main__":
-    main()
+# if __name__ == "__main__":
+#     main()

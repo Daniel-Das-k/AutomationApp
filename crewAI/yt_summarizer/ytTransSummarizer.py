@@ -100,14 +100,11 @@ class YouTubeTranscriptSummarizer:
 
         except Exception as e:
             raise e
-    
-
-
+ 
     def process_video(self, youtube_link):
         try :
             transcript_text = self.extract_transcript_details(youtube_link)
-            
-            
+                        
             if transcript_text:
                 summary = self.generate_gemini_content(transcript_text)
                 output_directory = "outputs/ytVideoSummarizer"
@@ -116,8 +113,7 @@ class YouTubeTranscriptSummarizer:
                 os.makedirs(output_directory, exist_ok=True)
 
                 self.save_to_markdown(output_filename, summary)
-            
-        
+                   
         except:
             # print(f"An error occurred: {e}")
             summary = self.generate_gemini_content()
@@ -127,7 +123,6 @@ class YouTubeTranscriptSummarizer:
             os.makedirs(output_directory, exist_ok=True)
 
             self.save_to_markdown(output_filename, summary)
-
 
 def main():
     summarizer = YouTubeTranscriptSummarizer()
