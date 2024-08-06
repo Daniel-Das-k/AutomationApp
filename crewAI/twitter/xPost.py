@@ -16,7 +16,7 @@ class TwitterPoster:
         # xcrew = Twitter()
         # text = input(": ")
         payload = {
-            "text": "Hi"
+            "text": "Hi working perfectly fine"
         }
         response = self.post_tweet_api(payload, access_token)
         return response
