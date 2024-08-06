@@ -32,7 +32,7 @@ class FacebookManager:
 
     def _post_to_facebook(self, content: str):
         try:
-            text = fb.run(content)
+            text = "Hiiiiiiiii"
             print(text)
             post = self.facebook_api.put_object(parent_object='me', connection_name='feed', message=text)
             print("Posting facebook....",post)
@@ -43,4 +43,4 @@ class FacebookManager:
 
 if __name__ == "__main__":
     facebook_manager = FacebookManager()
-    facebook_manager._post_to_facebook('god is great')
+    facebook_manager._post_to_facebook("hiiiii")

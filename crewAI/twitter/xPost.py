@@ -13,10 +13,10 @@ class TwitterPoster:
 
     def post_tweet(self):
         access_token = self.get_access_token()
-        xcrew = Twitter()
-        text = input(": ")
+        # xcrew = Twitter()
+        # text = input(": ")
         payload = {
-            "text": xcrew.run(text)
+            "text": "Hi"
         }
         response = self.post_tweet_api(payload, access_token)
         return response
