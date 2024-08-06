@@ -79,16 +79,7 @@ Fb_REDIRECT_URI = "https://facebook-rakb.onrender.com/facebook/callback"
 def home():
     access_token = session.get("access_token")
     page_access_token = session.get("page_access_token")
-    
     if access_token and page_access_token:
-        token_data = {
-                    "user_access_token": access_token,
-                    "page_access_token": page_access_token
-                }
-        
-        with open('tokens.json', 'w') as token_file:
-            json.dump(token_data, token_file)
-            print("Found")
         return f'''
             User Access Token: {access_token}
             Page Access Token: {page_access_token}
