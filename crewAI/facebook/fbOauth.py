@@ -110,24 +110,12 @@ def facebook_callback():
             )
             pages_data = pages_response.json()
             if 'data' in pages_data:
-                print("Pages Data :", pages_data)
-                first_page = pages_data['data'][0]
-                page_access_token = first_page['access_token']
-                session["page_access_token"] = page_access_token
-                session["page_id"] = first_page['id']
+                # print("Pages Data :", pages_data)
+                # first_page = pages_data['data'][0]
+                # page_access_token = first_page['access_token']
+                # session["page_access_token"] = page_access_token
+                # session["page_id"] = first_page['id']
                 print(",")
-
-                
-                token_data = {
-                    "user_access_token": user_access_token,
-                    "page_access_token": page_access_token
-                }
-                if os.path.exists('tokens.json'):
-                    with open('tokens.json', 'w') as token_file:
-                        json.dump(token_data, token_file)
-                        print("Found")
-                else:
-                    print("Not found")
 
                 return redirect(url_for('home'))
             else:
