@@ -2,7 +2,9 @@ import facebook
 import json
 from datetime import datetime, timedelta
 import time
+from crew import Facebook
 
+fb = Facebook()
 class FacebookManager:
     def __init__(self):
         self.credentials = self._load_credentials()
@@ -30,14 +32,15 @@ class FacebookManager:
 
     def _post_to_facebook(self, content: str):
         try:
-            print("Posting facebook....")
-            # post = self.facebook_api.put_object(parent_object='me', connection_name='feed', message=content)
-            image = self.facebook_api.put_photo(image=open('img.png', 'rb'),
-                message='Look at this cool photo!')
-            print(image)
+            text = fb.run(content)
+            print(text)
+            post = self.facebook_api.put_object(parent_object='me', connection_name='feed', message=text)
+            print("Posting facebook....",post)
+            # image = self.facebook_api.put_photo(image=open('img.png', 'rb'),
+            #     message="look at this photooo...")
         except facebook.GraphAPIError as e:
             print(f"An error occurred: {e}")
 
 if __name__ == "__main__":
     facebook_manager = FacebookManager()
-    facebook_manager._post_to_facebook('Excited to announce our new project!')
+    facebook_manager._post_to_facebook('god is great')

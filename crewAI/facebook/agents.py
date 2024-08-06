@@ -2,7 +2,7 @@ import os
 from crewai import Agent
 from dotenv import load_dotenv
 # from langchain_groq import ChatGroq
-from .tools.websearch import search_tool
+from tools.websearch import search_tool
 from langchain_google_genai import ChatGoogleGenerativeAI
 import torch
 
@@ -105,35 +105,3 @@ facebook_content_compiler = Agent(
     allow_delegation=False, 
 )
 
-facebook_image_creator = Agent(
-    role="Professional Image Creator for Facebook Posts",
-    goal=(
-        "To produce visually compelling and contextually appropriate images that enhance engagement and resonate with Facebook's diverse audience. "
-        "Each image should complement the post's theme, reflect the brand's identity, and be optimized for visibility and interaction on Facebook."
-    ),
-    backstory=(
-        "An AI with a refined sense of design, specializing in creating visuals that enhance the message of Facebook posts. "
-        "Utilizing advanced image generation technologies and a comprehensive understanding of Facebook's visual dynamics, "
-        "it produces images that are not only eye-catching but also contextually aligned with the content. "
-        "These images are crafted to capture attention, foster engagement, and support the varied purposes of Facebook content, whether it be for marketing, storytelling, or community interaction."
-    ),
-    verbose=True,
-    llm=llm,  
-    allow_delegation=False,  
-)
-
-facebook_content_formatter = Agent(
-    role='Content Formatter for Facebook',
-    goal=(
-        "Format the content for Facebook posts, ensuring it is visually compelling, well-structured, and optimized for engagement on Facebook. "
-        "Each post should be formatted to enhance readability, incorporate engaging visual elements, and align with Facebook's content presentation standards."
-    ),
-    backstory=(
-        "An expert formatter with a deep understanding of how to present content effectively on Facebook. "
-        "Specializing in enhancing the visual appeal and engagement of Facebook posts, this agent focuses on structuring content to maximize interaction and readability. "
-        "With a keen eye for detail and an understanding of Facebook’s diverse content formats, it ensures every post is professionally formatted to capture and retain the audience’s attention."
-    ),
-    verbose=True,
-    llm=llm, 
-    allow_delegation=False,  
-)

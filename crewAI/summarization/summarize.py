@@ -60,7 +60,6 @@ def main():
 
     # text = input("Enter YouTube Video Link: ")
     text = """
-ABSTRACT-
 It is the science and engineering of making intelligent machines, especially intelligent computer programs. It is related to
 the similar task of using computers to understand human intelligence, but AI does not have to confine itself to methods that
 are biologically observable. While no consensual definition of Artificial Intelligence (AI) exists, AI is broadly characterized
@@ -165,7 +164,6 @@ o Humanoid Robots are best examples for AI in robotics, recently the intelligent
 has been developed
 
 """
-
     if text:
         content = summarizer.generate_gemini_content(text)
         summarizer.save_to_markdown("summary.md", content)

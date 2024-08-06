@@ -70,32 +70,32 @@ description_task = Task(
     agent=youtube_description_agent, 
 )
 
-# class YouTubeTitleCreator:
-#     def __init__(self):
-#         self.agents = [youtube_title_creator]
-#         self.tasks = [title_generation_task]
-#         # # self.voice_assistant = voice_assistant
+class YouTubeTitleCreator:
+    def __init__(self):
+        self.agents = [youtube_title_creator]
+        self.tasks = [title_generation_task]
+        # # self.voice_assistant = voice_assistant
         
-#         self.crew = Crew(
-#             agents=self.agents,
-#             tasks=self.tasks,
-#             process=Process.sequential,
-#             memory=False,
-#             cache=True,
-#             max_rpm=100,
-#             share_crew=True,
-#             max_iterations=1000,  # Increase iteration limit if needed
-#                 time_limit=600  
-#         )
+        self.crew = Crew(
+            agents=self.agents,
+            tasks=self.tasks,
+            process=Process.sequential,
+            memory=False,
+            cache=True,
+            max_rpm=100,
+            share_crew=True,
+            max_iterations=1000,  # Increase iteration limit if needed
+                time_limit=600  
+        )
 
-#     def run(self):
-#         # self.voice_assistant.speak("Enter the prompt for YouTube video content: ")
-#         # text = self.voice_assistant.get_audio()
-#         text = input("Enter the prompt for YouTube video content: ")
-#         if len(text) > 1:
-#             result = self.crew.kickoff(inputs={'topic': text})
-#             print(result)
-#             return result 
+    def run(self):
+        # self.voice_assistant.speak("Enter the prompt for YouTube video content: ")
+        # text = self.voice_assistant.get_audio()
+        text = input("Enter the prompt for YouTube video content: ")
+        if len(text) > 1:
+            result = self.crew.kickoff(inputs={'topic': text})
+            print(result)
+            return result 
 
 
 # if __name__ == "__main__":
@@ -122,16 +122,15 @@ class YouTubeDescriptCreator:
                 time_limit=600  
         )
 
-    def run(self):
+    def run(self,content):
         # self.voice_assistant.speak("Enter the prompt for YouTube video content: ")
         # text = self.voice_assistant.get_audio()
-        text = input("Enter the prompt for YouTube video content: ")
-        if len(text) > 1:
-            result = self.crew.kickoff(inputs={'topic': text})
+        if len(content) > 1:
+            result = self.crew.kickoff(inputs={'topic': content})
             print(result)
             return result 
 
 
-if __name__ == "__main__":
-    crew_runner = YouTubeDescriptCreator()
-    crew_runner.run()
+# if __name__ == "__main__":
+#     crew_runner = YouTubeDescriptCreator()
+#     crew_runner.run()
