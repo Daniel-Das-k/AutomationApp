@@ -27,7 +27,6 @@ class Twitter:
 		# text = input("Enter the topic to tweet about: : ")
 		if len(content) > 1:
 			result = self.crew.kickoff(inputs={'topic': content})
-			print(result)
 			return result
    
 

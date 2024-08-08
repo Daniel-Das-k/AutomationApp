@@ -8,7 +8,7 @@ app.secret_key = "secret"
 Fb_APP_ID = "1519269175630468"
 Fb_APP_SECRET = "e04ebcfe52882ed9a9134937547e0ba0"
 Fb_REDIRECT_URI = "https://facebook-rakb.onrender.com/facebook/callback"
-
+# Fb_REDIRECT_URI = "https://www.linkedin.com/in/dheekshith-t-74b1782b9/"
 @app.route('/')
 def home():
     access_token = session.get("access_token")
@@ -27,7 +27,8 @@ def facebook_login():
 
 @app.route('/facebook/callback')
 def facebook_callback():
-    code = request.args.get("code")
+    # code = request.args.get("code")
+    code="AQD1OzBW0usL6yWVLoU1rbHpZNWkaa7S6lHKAC2t3ZtUBeVkeONx-D-wb4oPN_Qp0Zqc48mkTiFByc5wboo79m45JfSdU-g8Hl90UXJt8dCAMQcoEBa9h8v9jWj8-cyhthq0Vty2fOE2RUhvE2AY0l5tLIf2ZINMFWH3R4CD2RnD0SHqgg8nr8f7M3FaM4ruu6RlT6P1w73W60T8HCUiywscKhr7E03I3pRzvxQIhTOVVMEni4iAsuZ22robVybZIslTSxhlZ9BGtApdhmqwTNQOwaT9k2I7nXhu4vHNR11RpzSxyvcktfQ9s8jU3mI7w3WvInmMizktfNcMhWabitAjTl2USoWdD5_hRuHBbzd-CBTppGfPi3x3SA4PZKWa2k0#_=_"
     if code:
         response = requests.get(
             f"https://graph.facebook.com/v20.0/oauth/access_token?client_id={Fb_APP_ID}&redirect_uri={Fb_REDIRECT_URI}&client_secret={Fb_APP_SECRET}&code={code}"
@@ -42,6 +43,7 @@ def facebook_callback():
                 f"https://graph.facebook.com/v20.0/me/accounts?access_token={user_access_token}"
             )
             pages_data = pages_response.json()
+            print(pages_data)
             if 'data' in pages_data:
                 print("Pages Data :",pages_data)
                 first_page = pages_data['data'][0]

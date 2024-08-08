@@ -155,8 +155,8 @@ class YouTubeUploader:
 
 video_file_path = "bbaf4p.mpg"
 content = input(": ")
-video_title = title.run(content)
-video_description = description.run(content)
+video_title = str(title.run(content))
+video_description = str(description.run(content))
 
 uploader = YouTubeUploader()
 uploader.set_content(title=video_title, description=video_description)

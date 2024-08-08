@@ -3,7 +3,7 @@ from crewai import Agent
 from dotenv import load_dotenv
 # from langchain_groq import ChatGroq
 from langchain_google_genai import ChatGoogleGenerativeAI
-from .tools.websearch import search_tool
+from tools.websearch import search_tool
 import torch
 from crewai import Task
 from crewai import Crew, Process
@@ -37,6 +37,7 @@ title_generation_task = Task(
     ),
     expected_output=(
         "A well-crafted YouTube video title that effectively captures the essence of the video's content, attracts viewers, and aligns with YouTube's optimization standards."
+        "Strictly don't give the output in markdown, give as plain text"
     ),
     agent=youtube_title_creator,
 )
@@ -88,19 +89,19 @@ class YouTubeTitleCreator:
                 time_limit=600  
         )
 
-    def run(self):
+    def run(self,content):
         # self.voice_assistant.speak("Enter the prompt for YouTube video content: ")
         # text = self.voice_assistant.get_audio()
-        text = input("Enter the prompt for YouTube video content: ")
-        if len(text) > 1:
-            result = self.crew.kickoff(inputs={'topic': text})
+        
+        if len(content) > 1:
+            result = self.crew.kickoff(inputs={'topic': content})
             print(result)
             return result 
 
 
-# if __name__ == "__main__":
-#     crew_runner = YouTubeTitleCreator()
-#     crew_runner.run()
+if __name__ == "__main__":
+    crew_runner = YouTubeTitleCreator()
+    crew_runner.run("i have done a video on Gen AI covering langchain,agents etc...")
 
 
 

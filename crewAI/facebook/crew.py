@@ -36,10 +36,10 @@ class Facebook:
             return result
         
 
-# if __name__ == "__main__":
-#     generator = Facebook()
+if __name__ == "__main__":
+    generator = Facebook()
 
-#     text = input("Enter the topic for the Facebook post: ")
+    text = input("Enter the topic for the Facebook post: ")
 
-#     result = generator.run(topic=text)
-#     print(result)
+    result = generator.run(content=text)
+    print(result)
